@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid nav-bar">
+      <a href=""><img src="/upc.png" alt="" routerLink=""></a>
+      <a class="navbar-brand" routerLink="/home">TechNova </a>
+      <div class="collapse navbar-collapse nav-li" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cart">Shopping Cart</a>
+          </li>
+          <li class="nav-item">
+        </ul>
+        <form class="d-flex" role="search">
+          <input #msg (keyup)="onSearch(msg.value)" class="form-control me-2" type="search" placeholder="¿Qué estás buscando?" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit" routerLink="/home">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>

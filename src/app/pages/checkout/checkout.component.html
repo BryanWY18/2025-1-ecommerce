@@ -1,0 +1,120 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Datos del comprador</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="checkOutForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group my-2">
+                            <label for="userName">Nombre</label>
+                            <input type="text" class="form-control" id="userName" formControlName="userName" placeholder="Ingrese su nombre completo">
+                            @if(checkOutForm.get('userName')?.errors && 
+                            checkOutForm.get('userName')?.touched){
+                                <div class="text-danger">
+                                    @if(checkOutForm.get('userName')?.errors?.['required']){
+                                        El nombre es requerido
+                                    }
+                                    @if(checkOutForm.get('userName')?.errors?.['minlength']){
+                                        Use un nombre válido
+                                    }
+                                </div>
+                            }
+                        </div>
+                        <div class="form-group my-2">
+                            <label for="adress">Dirección</label>
+                            <input type="text" class="form-control" id="adress" formControlName="adress" placeholder="Ingrese su dirección de envío">
+                            @if(checkOutForm.get('adress')?.invalid && checkOutForm.get('adress')?.dirty || 
+                            checkOutForm.get('adress')?.touched){
+                                <div class="text-danger">
+                                    @if(checkOutForm.get('adress')?.errors?.['required']){
+                                        La dirección de envío es requerida
+                                    }@else {
+                                        @if(checkOutForm.get('adress')?.errors?.['minlength']){
+                                            Ingrese una dirección válida
+                                        }
+                                    }
+                                </div>
+                            }
+                        </div>
+                        <div class="form-group my-2">
+                            <label for="phone">Teléfono</label>
+                            <input type="number" minlength="10" class="form-control" id="phone" formControlName="phone" placeholder="Ingrese su teléfono">
+                            @if(checkOutForm.get('phone')?.invalid && checkOutForm.get('phone')?.dirty || 
+                            checkOutForm.get('phone')?.touched){
+                                <div class="text-danger">
+                                    @if(checkOutForm.get('phone')?.errors?.['required']){
+                                        El número de teléfono es requerido
+                                    }@else {
+                                        @if(checkOutForm.get('phone')?.errors?.['minLength']){
+                                            Ingrese un teléfono válido
+                                        }@else {
+                                            @if(checkOutForm.get('phone')?.errors?.['maxLength']){
+                                                Ingrese un teléfono válido
+                                            }@else {
+                                                @if(checkOutForm.get('phone')?.errors?.['pattern']){
+                                                    Ingrese un teléfono válido
+                                                }
+                                            }
+                                        }
+                                    }
+                                </div>
+                            }
+                        </div>
+                        <div class="form-group my-2">
+                            <label for="paymentMethod">Método de pago</label>
+                            <select name="" class="form-control" id="paymentMethod" formControlName="paymentMethod">
+                                <option value="">Seleccione un método de pago</option>
+                                <option value="creditCard">Tarjeta de crédito</option>
+                                <option value="debitCard">Tarjeta de débito</option>
+                                <option value="paypal">Paypal</option>
+                            </select>
+                            @if(checkOutForm.get('paymentMethod')?.invalid && checkOutForm.get('paymentMethod')?.dirty || checkOutForm.get('paymentMethod')?.touched){
+                                <div>
+                                    @if(checkOutForm.get('paymentMethod')?.errors?.['required']){
+                                        <div class="text-danger">
+                                            El método de pago es requerido
+                                        </div>
+                                    
+                                    }
+                                </div>
+
+                            }
+                        </div>
+                        <div class="form-group my-2">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" formControlName="email" placeholder="Ingrese su email">
+                            @if(checkOutForm.get('email')?.invalid && checkOutForm.get('email')?.dirty || checkOutForm.get('email')?.touched){
+                                <div class="text-danger">
+                                    @if(checkOutForm.get('email')?.errors?.['required']){
+                                        El mail es requerido
+                                    }@else {
+                                        @if(checkOutForm.get('email')?.errors?.['email']){  
+                                            <div class="text-danger">
+                                                Ingrese un email válido
+                                            </div>
+    
+                                        }
+                                    }
+                                </div>
+                            }
+                        </div>
+                        <div class="form-group form-check my-5">
+                            <input type="checkbox" class="form-check-input" id="agreeTerms" formControlName="agreeTerms">
+                            <label for="agreeTerms" class="form-check-label">Acepto los términos y condiciones</label>
+                            @if(checkOutForm.get('agreeTerms')?.invalid && checkOutForm.get('agreeTerms')?.dirty || checkOutForm.get('agreeTerms')?.touched){
+                                <div class="text-danger">
+                                    @if(checkOutForm.get('agreeTerms')?.errors?.['required']){
+                                        Debes aceptar los términos y condiciones
+                                    }
+                                </div>
+                            }
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" [disabled]="!checkOutForm.valid">Confirmar Compra</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

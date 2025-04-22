@@ -1,0 +1,70 @@
+.not-found{
+    align-items: center;
+    text-align: center;
+    background-image: url("/not-carrito.jpg");
+    background-size: cover;
+    padding: 139px;
+}
+
+.not-found p{
+    font-family: "Source code pro";
+    font-size: 40px;
+    font-weight: bolder;
+    color: white
+}
+
+#button-not{
+    font-family: "Source code pro";
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+
+.card-img{
+    max-height: 300px;
+    max-width: 200px;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+
+.footer-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.shop{
+    font-family: "Source code pro";
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+    padding: 40px;
+}
+
+#img-carrito{
+    height:100px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: -40px;
+    margin-bottom: 50px;
+}
+
+.total-cart{
+    align-items: center;
+    background-color: aquamarine;
+    max-width: 100vh;
+
+}
+
+.total-cart h2{
+    font-family: "Source code pro";
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+    padding: 20px;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}

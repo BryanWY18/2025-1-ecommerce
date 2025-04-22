@@ -1,0 +1,29 @@
+<div>
+    <h2>Confirmación de compra</h2>
+    <div class="confirmation-message">
+        <p>¡Gracias por tu compra!</p>
+        <p>Tu pedido ha sido confirmado y será enviado a la dirección proporcionada.</p>
+        <p>Recibirás un correo electrónico con los detalles de tu pedido.</p>
+    </div>
+    <div>
+        <h3>Detalles del pedido:</h3>
+        <ul>
+            <li><strong>Nombre:</strong>{{orderTicket.userName}}</li>
+            <li><strong>Dirección:</strong>{{orderTicket.adress}}</li>
+            <li><strong>Teléfono:</strong>{{orderTicket.phone}}</li>
+            <li><strong>Email:</strong>{{orderTicket.email}}</li>
+            <li><strong>Método de pago:</strong>{{orderTicket.paymentMethod}}</li>
+        </ul>
+        <h3>Productos comprados:</h3>
+        <ul>
+            @for(p of orderProducts; track p){
+                <li>
+                    {{p.name}} - {{p.price | currency}}
+                </li>
+            }
+        </ul>
+        <h3>Total de la compra:</h3>
+        <li>{{totalPrice | currency}}</li>
+    </div>
+    <button class="btn btn-primary" routerLink="/home">Volver a la tienda</button>
+</div>

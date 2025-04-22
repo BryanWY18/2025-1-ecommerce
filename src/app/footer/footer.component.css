@@ -1,0 +1,13 @@
+div{
+    background-color: rgb(35, 35, 206);
+    padding-top:8px;
+    padding-bottom: 5px;
+    font-family: "source Code pro";
+    font-weight: bold;
+    height: 43px;
+}
+
+#footer{
+    text-align: center;
+    color: black;
+}

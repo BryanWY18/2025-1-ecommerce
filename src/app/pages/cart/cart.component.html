@@ -1,0 +1,34 @@
+@if(onShopping.length == 0){
+  <div class="not-found">
+    <p>¡No tienes nada en tu carrito!</p>
+    <p>¿Deseas comenzar con tu compra?</p>
+    <button type="button" class="btn btn-primary" routerLink="/home" id="button-not">Comprar</button>
+  </div>
+}@else{
+  <h2 class="shop">Shopping Cart</h2>
+  <img id="img-carrito" src="/carrito.png" alt="">
+          <div style=" margin: 15px 65px;">
+            <div class="card-group">
+              <div class="row">  
+                @for(p of onShopping; track $index){
+                  <div class="card col-md-4 mb-4 card">
+                    <img [src]="p.img" class="card-img-top card-img" alt={{p.name}}>
+                    <div class="card-body">
+                      <h5 class="card-title">{{p.name}}</h5>
+                      <p class="card-text">{{p.description}}</p> 
+                      <div class="footer-card-2 footer-button">
+                        <p class="card-text"><small class="text-body-secondary"><a href="#">{{p.price | currency}}</a></small></p>
+                        <button (click)="removeFromCart(p)" class="btn btn-danger">Eliminar</button>
+                      </div>
+                    </div>
+                  </div>
+                }
+            </div>
+          </div>
+        </div>
+      <div class="col-md-4 total-cart">
+        <h2>Total</h2>
+        <p>{{ totalPrice | currency }}</p>
+        <button class="btn btn-success" routerLink="/shipmentForm">Checkout</button>
+      </div>
+  }

@@ -1,0 +1,15 @@
+.nav-bar a {
+    color: white;
+}
+
+
+img{
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav {
+    background-image: url("/nav image.jpg");
+    background-size: cover;
+    background-position: center;
+  }
