@@ -1,29 +1,37 @@
-<div>
+<div class="container">
     <h2>Confirmación de compra</h2>
-    <div class="confirmation-message">
+    <div class="confirm">
         <p>¡Gracias por tu compra!</p>
         <p>Tu pedido ha sido confirmado y será enviado a la dirección proporcionada.</p>
         <p>Recibirás un correo electrónico con los detalles de tu pedido.</p>
     </div>
-    <div>
-        <h3>Detalles del pedido:</h3>
-        <ul>
-            <li><strong>Nombre:</strong>{{orderTicket.userName}}</li>
-            <li><strong>Dirección:</strong>{{orderTicket.adress}}</li>
-            <li><strong>Teléfono:</strong>{{orderTicket.phone}}</li>
-            <li><strong>Email:</strong>{{orderTicket.email}}</li>
-            <li><strong>Método de pago:</strong>{{orderTicket.paymentMethod}}</li>
-        </ul>
-        <h3>Productos comprados:</h3>
-        <ul>
-            @for(p of orderProducts; track p){
-                <li>
-                    {{p.name}} - {{p.price | currency}}
-                </li>
-            }
-        </ul>
+    <div class="cards">
+        <div class="details">
+            <h3>Detalles del pedido:</h3>
+            <hr>
+            <ul>
+                <li><strong>Nombre: </strong>{{orderTicket.userName}}</li>
+                <li><strong>Dirección: </strong>{{orderTicket.adress}}</li>
+                <li><strong>Teléfono: </strong>{{orderTicket.phone}}</li>
+                <li><strong>Email: </strong>{{orderTicket.email}}</li>
+                <li><strong>Método de pago: </strong>{{orderTicket.paymentMethod}}</li>
+            </ul>
+        </div>
+        <div class="products">
+            <h3>Productos comprados:</h3>
+            <hr>
+            <ul>
+                @for(p of orderProducts; track p){
+                    <li>
+                        {{p.name}} - {{p.price | currency}}
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="total">
         <h3>Total de la compra:</h3>
-        <li>{{totalPrice | currency}}</li>
+        <p>{{totalPrice | currency}}</p>
     </div>
     <button class="btn btn-primary" routerLink="/home">Volver a la tienda</button>
 </div>

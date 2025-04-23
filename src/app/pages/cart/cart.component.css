@@ -53,9 +53,9 @@
 
 .total-cart{
     align-items: center;
-    background-color: aquamarine;
-    max-width: 100vh;
-
+    width: 100%;
+    text-align: center;
+    padding-bottom: 50px;
 }
 
 .total-cart h2{
@@ -67,4 +67,18 @@
     justify-content: center;
     margin: 0 auto;
     text-align: center;
+}
+
+.total-cart p{
+    font-size: 35px;
+    font-family: "Source code pro";
+    font-weight: bolder;
+}
+
+.total-cart button{
+    font-family: "Source code pro";
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.2);
 }

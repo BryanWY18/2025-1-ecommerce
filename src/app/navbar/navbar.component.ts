@@ -13,21 +13,15 @@ import {Router} from '@angular/router';
 })
 export class NavbarComponent {
 
-  @Output() listOutPut:EventEmitter<Product[]>=new EventEmitter<Product[]>();
-
   findOnList:Product[]=[];
 
-  constructor(public productService:ProductService, private router:Router ){}
+  constructor(public productService:ProductService, public router:Router ){}
 
   onSearch(toSearch:string){
-    if(toSearch==''){
-      this.findOnList=this.productService.productList();
-      this.listOutPut.emit(this.findOnList);
-    }
-    else{
+      
       this.findOnList=this.productService.searchProduct(toSearch);
-      this.listOutPut.emit(this.findOnList);
-    }
   }
+
+  /* this.router.navigate(['/confirmation']) */
 
 }

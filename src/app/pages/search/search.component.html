@@ -1,0 +1,26 @@
+<div style=" margin: 15px 65px;">
+    <div class="card-group">
+      <div class="row">       
+        @for(p of findList; track p){
+          <div class="card col-md-4 mb-4 card">
+            <img [src]="p.img" class="card-img-top" alt={{p.name}}>
+            <div class="card-body">
+              <h5 class="card-title">{{p.name}}</h5>
+              <p class="card-text">{{p.description}}</p> 
+              <div class="footer-card-2 price-button">
+                <p class="card-text"><small class="text-body-secondary">{{p.price | currency}}</small></p>
+                <button type="button" class="btn btn-primary" (click)="addToCar(p)">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        }
+    </div>
+  </div>
+</div>
+@if(findList.length==0){
+  <div class="not-found">
+    <p>¡No tenemos el producto que buscas!</p>
+    <p>¿Deseas explorar nuestra tienda?</p>
+    <button type="button" class="btn btn-primary" routerLink="/home" id="button-not">Explora</button>
+  </div>
+}

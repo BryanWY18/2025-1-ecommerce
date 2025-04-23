@@ -85,7 +85,7 @@ export class ProductService {
     return this.products;
   }
 
-  private searchResults = this.products;
+  searchResults:Product[]=[];
 
   searchProduct(term:string):Product[]{
     const filteredProduct= this.products.filter(
@@ -94,7 +94,7 @@ export class ProductService {
       product.description.toLowerCase().includes(term.toLowerCase())
     );
     this.searchResults=filteredProduct;
-    return this.searchResults
+    return this.searchResults;
   }
 
 }

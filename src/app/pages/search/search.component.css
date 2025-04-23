@@ -1,0 +1,14 @@
+.not-found{
+    align-items: center;
+    text-align: center;
+    background-image: url("/not-carrito.jpg");
+    background-size: cover;
+    padding: 139px;
+}
+
+.not-found p{
+    font-family: "Source code pro";
+    font-size: 40px;
+    font-weight: bolder;
+    color: white
+}
