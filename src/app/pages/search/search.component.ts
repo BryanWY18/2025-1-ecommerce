@@ -17,13 +17,17 @@ export class SearchComponent {
   constructor(public productService:ProductService, public cartService:CartService){}
 
   ngOnInit(){
-    this.findList=this.productService.searchResults;
-  }
+    this.loadList();
+  };
 
+  loadList(){
+    this.findList=this.productService.searchResults;
+  };
+  
   findList:Product[]=[]
 
   addToCar(index:any){
     this.cartService.addFavorites(index);
-  }
+  };
 
 }

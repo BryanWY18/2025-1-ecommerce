@@ -83,7 +83,7 @@ export class ProductService {
 
   productList(){
     return this.products;
-  }
+  };
 
   searchResults:Product[]=[];
 

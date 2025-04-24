@@ -13,13 +13,10 @@ import {Router} from '@angular/router';
 })
 export class NavbarComponent {
 
-  findOnList:Product[]=[];
-
   constructor(public productService:ProductService, public router:Router ){}
 
-  onSearch(toSearch:string){
-      
-      this.findOnList=this.productService.searchProduct(toSearch);
+  onSearch(toSearch:string){ 
+      this.productService.searchProduct(toSearch);
   }
 
   /* this.router.navigate(['/confirmation']) */
